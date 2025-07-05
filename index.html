@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KeyBlaze - Unleash Your Speed. Track. Improve. Dominate.</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="particles" id="particles"></div>
+
+    <div class="theme-toggle" id="themeToggle" data-tooltip="Toggle Theme">
+      <i class="fas fa-moon"></i>
+    </div>
+
+    <header>
+      <h1>Key Blaze</h1>
+      <p class="subtitle">Unleash Your Speed. Track. Improve. Dominate.</p>
+    </header>
+
+    <div class="container">
+      <div class="stats-container">
+        <div class="stat-box">
+          <div class="stat-value" id="wpm">0</div>
+          <div class="stat-label">WPM</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value" id="accuracy">0%</div>
+          <div class="stat-label">Accuracy</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value" id="cpm">0</div>
+          <div class="stat-label">CPM</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value" id="errors">0</div>
+          <div class="stat-label">Errors</div>
+        </div>
+      </div>
+
+      <div class="typing-container">
+        <div class="progress-container">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <div class="quote-display" id="quoteDisplay"></div>
+
+        <div class="input-container">
+          <textarea
+            id="inputField"
+            class="input-field"
+            placeholder="Start typing here... The timer will begin automatically."
+            rows="5"
+            spellcheck="false"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            autofocus></textarea>
+        </div>
+
+        <div class="controls">
+          <div class="timer-container">
+            <i class="fas fa-clock" style="color: var(--accent)"></i>
+            <div class="timer" id="timer">60</div>
+          </div>
+
+          <div class="settings">
+            <label class="tooltip" data-tooltip="Test Duration">
+              <select id="timeSelect">
+                <option value="15">15 seconds</option>
+                <option value="30">30 seconds</option>
+                <option value="60" selected>60 seconds</option>
+                <option value="120">2 minutes</option>
+                <option value="300">5 minutes</option>
+              </select>
+            </label>
+
+            <label class="tooltip" data-tooltip="Difficulty Level">
+              <select id="difficultySelect">
+                <option value="easy">Easy</option>
+                <option value="medium" selected>Medium</option>
+                <option value="hard">Hard</option>
+                <option value="expert">Expert</option>
+                <option value="custom">Custom Text</option>
+              </select>
+            </label>
+          </div>
+
+          <button id="resetBtn" class="btn btn-secondary">
+            <i class="fas fa-redo"></i>
+            Reset
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="result-modal" id="resultModal">
+      <div class="modal-content">
+        <h2 class="modal-title">Test Completed!</h2>
+        <p class="modal-subtitle">Your typing results are ready</p>
+
+        <div class="modal-stats">
+          <div class="modal-stat">
+            <div class="modal-stat-value" id="finalWpm">0</div>
+            <div class="modal-stat-label">Words Per Minute</div>
+          </div>
+          <div class="modal-stat">
+            <div class="modal-stat-value" id="finalAccuracy">0%</div>
+            <div class="modal-stat-label">Accuracy</div>
+          </div>
+          <div class="modal-stat">
+            <div class="modal-stat-value" id="finalCpm">0</div>
+            <div class="modal-stat-label">Chars Per Minute</div>
+          </div>
+          <div class="modal-stat">
+            <div class="modal-stat-value" id="finalErrors">0</div>
+            <div class="modal-stat-label">Errors</div>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button id="newTestBtn" class="btn btn-primary">
+            <i class="fas fa-keyboard"></i>
+            New Test
+          </button>
+          <button id="shareBtn" class="btn btn-success">
+            <i class="fas fa-share-alt"></i>
+            Share Results
+          </button>
+          <button id="closeModalBtn" class="btn btn-secondary">
+            <i class="fas fa-times"></i>
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2023 NitroType Pro | Advanced Typing Speed Test</p>
+    </footer>
+
+    <div class="mobile-warning-modal" id="mobileWarningModal">
+      <div class="mobile-warning-content">
+        <h2>Desktop Required</h2>
+        <p>
+          This website is best experienced on a desktop device. Please open it
+          on a larger screen.
+        </p>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
